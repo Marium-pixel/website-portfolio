@@ -1,51 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width <h1>Your Name</h1>
-    <link rel="stylesheet" href="stylo.css">
-</header>, initial-scale=1.0">
-    <title>ArchVision</title>
-    <style>
-        body {
-      background-color: rgb(78, 8, 72);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArchVision</title>
+  <style>
+    body {
+      background-color: #fffbe6;
+      
     }
-    </style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      /* Style the body */
+      body {
+        font-family: 'League Spartan', sans-serif;  /* Use League Spartan font */
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+      
+      /* Style the navigation bar */
+      .navbar {
+        background-color: #0096c7;  /* Blue background */
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional shadow for visual depth */
+      }
+      
+      /* Style the navigation list */
+      .nav-list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Style the list items */
+      .nav-list li {
+        margin: 0 20px;
+      }
+      
+      /* Style the anchor links */
+      .nav-list a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 700;  /* Bold text */
+        padding: 8px 16px;
+        transition: all 0.3s ease;  /* Smooth transition on hover */
+        border-radius: 4px;
+      }
+      
+      /* Hover effect on the navigation links */
+      .nav-list a:hover {
+        background-color: #0096c7;  /* Darker blue when hovered */
+        transform: scale(1.1);  /* Slight scale up effect on hover */
+      }
+      
+      /* Make the navigation bar responsive */
+      @media (max-width: 768px) {
+        .nav-list {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .nav-list li {
+          margin: 10px 0;
+        }
+      
+        .navbar {
+          padding: 0.5rem;
+        }
+      }
+      </style>
+  <!-- Link to Google Fonts for League Spartan -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 style="color: beige;  font-size: 100px; font-family: broadway; text-align: center; ">ArchVision</h1>
-    <h5 style="color: beige;  font-size: 20px; font-family: broadway; text-align: center; ">by Theo James</h5>
-   
-        <a style= "text-decoration: wavy;     
-        color:  #fffbe6;           
-        font-size: 2rem; 
-        text-align:center;        
-        font-weight: bold;        
-        letter-spacing: 0.4rem;   
-        text-transform: uppercase;
-        font-family: broadway;"
-        href="about.html">ABOUT</a>
-        <a style= "text-decoration: wavy;     
-        color:  #fffbe6;           
-        font-size: 2rem;         
-        font-weight: bold;        
-        letter-spacing: 0.4rem;   
-        text-transform: uppercase;
-        font-family: broadway;"
-        href="projects.html">PROJECTS</a>
-        <a style= "text-decoration: wavy;     
-        color:  #fffbe6;           
-        font-size: 2rem;      
-        font-weight: bold;        
-        letter-spacing: 0.4rem;   
-        text-transform: uppercase;
-        font-family: broadway;"
-        href="contact.html">CONTACT</a>
-
-
-   
-    <footer>
-        <p style="color: #fffbe6;">&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="file:///C:/Users/user/OneDrive/Desktop/navplane.html#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 style="color:#080661;  font-size: 100px; font-family: broadway; text-align: center; ">ArchVision</h1>
+  <h5 style="color:#080661 ;  font-size: 20px; font-family: broadway; text-align: center; ">by Theo James</h5>
+  <footer>
+    <p style="color:#080661 ;">&copy; 2024 Your Name. All rights reserved.</p>
+</footer>
 </body>
 </html>
+
