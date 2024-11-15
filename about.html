@@ -1,115 +1,148 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArchVision</title>
-  <style>
-    body {
-      background-color: #080661;
-      
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+         body {
+            background-color: #fffbe6;
+            font-family: 'League Spartan', sans-serif;  /* Use League Spartan font */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      /* Style the body */
-      body {
-        font-family: 'League Spartan', sans-serif;  /* Use League Spartan font */
-        line-height: 1.6;
-        background-color: #080661;
-      }
-      
-      /* Style the navigation bar */
-      .navbar {
-        background-color: #080661;  /* Blue background */
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional shadow for visual depth */
-      }
-      
-      /* Style the navigation list */
-      .nav-list {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      /* Style the list items */
-      .nav-list li {
-        margin: 0 20px;
-      }
-      
-      /* Style the anchor links */
-      .nav-list a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: 700;  /* Bold text */
-        padding: 8px 16px;
-        transition: all 0.3s ease;  /* Smooth transition on hover */
-        border-radius: 4px;
-      }
-      
-      /* Hover effect on the navigation links */
-      .nav-list a:hover {
-        background-color: #0096c7;  /* Darker blue when hovered */
-        transform: scale(1.1);  /* Slight scale up effect on hover */
-      }
-      
-      /* Make the navigation bar responsive */
-      @media (max-width: 768px) {
-        .nav-list {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      
-        .nav-list li {
-          margin: 10px 0;
-        }
-      
+        /* Style the navigation bar */
         .navbar {
-          padding: 0.5rem;
+            background-color: #080661;  /* Blue background */
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional shadow for visual depth */
         }
-      }
-      </style>
-  <!-- Link to Google Fonts for League Spartan -->
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+        /* Style the navigation list */
+        .nav-list {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the list items */
+        .nav-list li {
+            margin: 0 20px;
+        }
+
+        /* Style the anchor links */
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;  /* Bold text */
+            padding: 8px 16px;
+            transition: all 0.3s ease;  /* Smooth transition on hover */
+            border-radius: 4px;
+        }
+
+        /* Hover effect on the navigation links */
+        .nav-list a:hover {
+            background-color: #0096c7;  /* Darker blue when hovered */
+            transform: scale(1.1);  /* Slight scale up effect on hover */
+        }
+
+        /* Make the navigation bar responsive */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .navbar {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Main container styling */
+        .container {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 80%;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .image-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .text-container {
+            flex: 2;
+            color: #333;
+        }
+
+        .text-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #080661;
+        }
+
+        .text-container p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* About Me section header */
+        h1.about-me-header {
+            color: #080661;
+            font-size: 70px;
+            font-family: Broadway, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="file:///C:/Users/user/OneDrive/Desktop/navplane.html#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <h1 style="color:#fffbe6;  font-size: 70px; font-family: broadway; text-align:center ; ">About Me</h1>
-  <h4 style="color:#fffbe6; font-size: 35px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align:center ; ">I'm Theo, a 35 year old architect based in Manhattan,New York</h4>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  
-    <div style="text-align: center;">
-        <img src="archii.jpg" alt="theo james the architect picture" style="width: 800px; height: 600px;">/*picture saved on pc*/
-        <p  style=" color:#fffbe6;  font-size: 25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align:justify; text-align-last:center; " > As an architect with a deep passion for creating spaces that inspire and uplift, I’ve spent over a decade turning visions into reality. My journey began with a fascination for blending form and function, and since then, I’ve had the privilege of designing homes, offices, and community spaces that connect people to their environments. 
-            I believe architecture isn’t just about buildings—it’s about shaping experiences and enhancing lives. My portfolio reflects a dedication to thoughtful design, sustainable practices, and a love for unique details that make each project stand out. 
-            I’m always excited to take on new challenges, working closely with clients to bring their dreams to life in creative and practical ways. </p>
-      
+    <!-- About Me Header -->
+    <h1 class="about-me-header">About Me</h1>
+
+    <!-- Content Container -->
+    <div class="container">
+        <div class="image-container">
+            <img src="https://i.pinimg.com/originals/69/11/8f/69118fc4ac855c5045148788c47c7d3a.jpg" alt="Placeholder Image">
+        </div>
+        <div class="text-container">
+            <h2>I'm Theo, a 35-year-old architect based in Manhattan, New York</h2>
+            <p>As an architect with a deep passion for creating spaces that inspire and uplift, I’ve spent over a decade turning visions into reality. My journey began with a fascination for blending form and function, and since then, I’ve had the privilege of designing homes, offices, and community spaces that connect people to their environments.
+                I believe architecture isn’t just about buildings—it’s about shaping experiences and enhancing lives. My portfolio reflects a dedication to thoughtful design, sustainable practices, and a love for unique details that make each project stand out.
+                I’m always excited to take on new challenges, working closely with clients to bring their dreams to life in creative and practical ways.</p>
+        </div>
     </div>
-      
-  
-
-
-
-
-  <footer>
-    <p style="color:#fffbe6 ;">&copy; 2024 Your Name. All rights reserved.</p>
-</footer>
 </body>
 </html>
-
