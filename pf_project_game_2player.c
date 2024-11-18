@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -41,16 +41,16 @@ void moveZombies(char maze[MAZE_SIZE][MAZE_SIZE], int zombieX[], int zombieY[]) 
 
 // Function to check if the exit is in front of the player
 int checkForExit(char direction, int playerX, int playerY, char maze[MAZE_SIZE][MAZE_SIZE]) {
-    if (direction == 'W' || direction == 'w') {
-        return maze[playerY - 1][playerX] == 'E';
-    } else if (direction == 'A' || direction == 'a') {
-        return maze[playerY][playerX - 1] == 'E';
-    } else if (direction == 'S' || direction == 's') {
-        return maze[playerY + 1][playerX] == 'E';
-    } else if (direction == 'D' || direction == 'd') {
-        return maze[playerY][playerX + 1] == 'E';
+    if (direction == 'W' || direction == 'w' || direction == 'I' || direction =='i') {
+        return maze[playerY - 1][playerX] == 'E';  // Check up
+    } else if (direction == 'A' || direction == 'a' || direction == 'J'|| direction=='j') {
+        return maze[playerY][playerX - 1] == 'E';  // Check left
+    } else if (direction == 'S' || direction == 's' || direction == 'K'|| direction=='k') {
+        return maze[playerY + 1][playerX] == 'E';  // Check down
+    } else if (direction == 'D' || direction == 'd' || direction == 'L'|| direction=='l') {
+        return maze[playerY][playerX + 1] == 'E';  // Check right
     }
-    return 0; // Not moving towards exit
+    return 0; // Not moving towards the exit
 }
 
 // Function to handle player input (including Player 2 movement with IJKL)
@@ -220,25 +220,25 @@ int main() {
             }
 
             // Process player 2 movement (IJKL)
-            if (direction2 == 'I') {
+            if (direction2 == 'I' || direction2=='i') {
                 if (maze[player2Y - 1][player2X] == ' ') {
                     maze[player2Y][player2X] = ' ';
                     player2Y--;
                     maze[player2Y][player2X] = 'Y';
                 }
-            } else if (direction2 == 'J') {
+            } else if (direction2 == 'J'|| direction2=='j') {
                 if (maze[player2Y][player2X - 1] == ' ') {
                     maze[player2Y][player2X] = ' ';
                     player2X--;
                     maze[player2Y][player2X] = 'Y';
                 }
-            } else if (direction2 == 'K') {
+            } else if (direction2 == 'K'|| direction2=='k') {
                 if (maze[player2Y + 1][player2X] == ' ') {
                     maze[player2Y][player2X] = ' ';
                     player2Y++;
                     maze[player2Y][player2X] = 'Y';
                 }
-            } else if (direction2 == 'L') {
+            } else if (direction2 == 'L'|| direction2=='l') {
                 if (maze[player2Y][player2X + 1] == ' ') {
                     maze[player2Y][player2X] = ' ';
                     player2X++;
@@ -285,5 +285,4 @@ int main() {
 
     return 0;
 }
-
 
