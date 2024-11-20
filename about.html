@@ -170,12 +170,24 @@
       </div>
     </div>
     
+  
+  <script>
+      // Add hover effect to scale images
+      document.querySelectorAll('img').forEach(img => {
+          img.addEventListener('mouseover', () => {
+              img.style.transform = 'scale(1.1)';
+          });
+          img.addEventListener('mouseout', () => {
+              img.style.transform = 'scale(1)';
+          });
+      });
+  </script>
     <!-- Footer -->
     <div style="background-color: #333; color: #fff; text-align: center; padding: 10px; margin-top: 40px; border-radius: 5px;">
       © 2024 ArchVision. All rights reserved.
     </div>
-    
 </body>
 </html>
+
 
    
