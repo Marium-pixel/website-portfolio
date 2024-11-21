@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArchVision</title>
+  <title>ArchVision - Projects</title>
   <style>
     * {
       margin: 0;
@@ -11,61 +11,220 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'League Spartan', sans-serif;
-      line-height: 1.6;
-      background-color: burlywood; /* Light blue background */
-    }
-
     /* Navbar Styles */
-    .navbar {
-      background-color: rgb(128, 42, 42); /* Dark blue for navbar */
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center; /* Center navbar items horizontally */
-      align-items: center; /* Center navbar items vertically */
-    }
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
 
-    .nav-list {
-      list-style-type: none;
-      display: flex;
-      justify-content: center; /* Center links horizontally */
-      align-items: center; /* Vertically center items */
-    }
+/* Body and Layout Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Default to black background (dark mode) */
+  color: #FFFFFFDD; /* White text for dark mode */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+.progress-sub-background {
+position: relative;
+width: 100%;
+height: 4px;
+border-radius: 9999px;
+background-color: #fff5;
+}
 
-    .nav-list li {
-      margin: 0 20px;
-    }
+.progress-sub-foreground {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+background-color: #fff;
+border-radius: 9999px;
+width: 0%;
+}
 
-    .nav-list a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: 700;
-      padding: 8px 16px;
-      transition: all 0.3s ease;
-      border-radius: 4px;
-    }
+nav {
+position: fixed;
+left: 0;
+top: 0;
+right: 0;
+z-index: 50;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 36px;
+font-weight: 500;
+}
 
-    .nav-list a:hover {
-      background-color:  bisque; /* Light blue for hover */
-      transform: scale(1.1);
+.dark-mode nav {
+background-color: #000000; /* Dark background for dark mode */
+color: #ffffff; /* White text for dark mode */
+}
+
+.light-mode nav {
+background-color: #ffffff; /* Light background for light mode */
+color: #000000; /* Black text for light mode */
+}
+
+/* Other existing styles... */
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em;
+background-color: #f8f9fa;
+border-bottom: 1px solid #ccc;
+}
+
+.dark-mode .navbar {
+background-color: #444444;
+border-color: #555555;
+
+}
+
+.mode-toggle {
+cursor: pointer;
+padding: 0.5em 1em;
+border: none;
+border-radius: 5px;
+background-color: #080809;
+color: white;
+transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+background-color: #0056b3;
+}
+
+nav svg {
+width: 20px;
+height: 20px;
+}
+
+nav .svg-container {
+width: 20px;
+height: 20px;
+}
+
+nav > div {
+display: inline-flex;
+align-items: center;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+nav > div:first-child {
+gap: 10px;
+}
+
+nav > div:last-child {
+gap: 24px;
+}
+
+nav > div:last-child > .active {
+position: relative;
+}
+
+nav > div:last-child > .active:after {
+bottom: -8px;
+left: 0;
+right: 0;
+position: absolute;
+content: "";
+height: 3px;
+border-radius: 99px;
+background-color: #ecad29;
+}
+
+.indicator {
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+height: 5px;
+z-index: 60;
+background-color: #ecad29;
+}
+
+.search_input {
+display: none;
+background: transparent;
+border: 2px solid #fff;
+padding: 5px;
+color: white;
+font-size: 14px;
+width: 0;
+transition: width 0.3s ease;
+}
+
+.search_input.active {
+display: block;
+width: 200px;
+}
+
+.search_button {
+background: transparent;
+border: none;
+color: white;
+font-size: 16px;
+cursor: pointer;
+}
+
+.search_button:hover {
+color: #ecad29;
+}
+
+.search {
+position: relative;
+}
+
+.search .search_input {
+margin-left: 10px;
+}
+
+    /* Contact Us Header */
+    .header {
+      background-color: #000;
+      padding: 40px 0;
+      color: #fff;
+      text-align: center;
     }
+    .dark-mode .header {
+    background-color: #000000; /* Dark background for dark mode */
+    color: #ffffff; /* White text for dark mode */
+}
+
+.light-mode .header {
+    background-color: #ffffff; /* Light background for light mode */
+    color: #000000; /* Black text for light mode */
+}
 
     h1 {
-      color:  rgb(128, 42, 42); /* Dark blue for header */
+      color:  rgb(252, 246, 246); /* Dark blue for header */
       font-size: 100px;
       font-family: Broadway, sans-serif;
       text-align: center;
       margin-top: 50px;
     }
+    .dark-mode .h1{
+      color:#fff;
+    }
+    .light-mode .h1{
+      color: #000;
+    }
 
     h5 {
-      color:  rgb(128, 42, 42); /* Dark blue for subtitle */
+      color:  rgb(249, 249, 249); /* Dark blue for subtitle */
       font-size: 20px;
       font-family: Broadway, sans-serif;
       text-align: center;
+    }
+    .dark-mode .h5{
+      color:#fff;
+    }
+    .light-mode .h5{
+      color: #000;
     }
 
     footer {
@@ -82,17 +241,7 @@
       font-size: 14px;
     }
 
-    #services {
-      padding: 60px 20px;
-      background-color:   blanchedalmond; /* Light blue background */
-    }
 
-    #services h2 {
-      color: #003366;
-      text-align: center;
-      font-size: 36px;
-      font-family: Broadway, sans-serif;
-    }
 /* Projects Section */
 #projects {
       display: none; /* Hide the projects section by default */
@@ -115,7 +264,7 @@
 
     /* Ensure the project cards take up the full width of the grid cell */
     .project-card {
-      background-color:   burlywood;
+      background-color:   rgb(179, 171, 171, 0.958);
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
       overflow: hidden;
@@ -131,7 +280,7 @@
       width: 100%; /* Ensures the image stretches to fill the card */
       height: 100%; /* Makes the image fill the entire container vertically */
       object-fit: cover; /* Ensures the image fills the container while preserving aspect ratio */
-      border-bottom: 4px solid #003366; /* Optional bottom border to separate image from text */
+      border-bottom: 4px solid #ffffff; /* Optional bottom border to separate image from text */
     }
 
     /* Content area for text */
@@ -143,14 +292,14 @@
     .project-card h3 {
       font-size: 1.6rem;
       font-family: 'League Spartan', sans-serif;
-      color:  brown;
+      color:  #fff;
       margin-bottom: 10px;
       text-align: center;
     }
 
     .project-card p {
       font-size: 1rem;
-      color: #555;
+      color: #fff;
       text-align: center;
       line-height: 1.5;
       margin-bottom: 20px;
@@ -158,14 +307,14 @@
 
     .project-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Elevate card on hover */
+      box-shadow: 0 12px 20px #FFFFFFDD(0, 0, 0, 0.15); /* Elevate card on hover */
     }
 
     /* Aesthetic for "Have a look at our recent projects" */
     #projects-subheading {
         display: none;
       text-align: center;
-      color: #003366; /* Dark blue color */
+      color: #ffffff; /* Dark blue color */
       font-size: 36px;
       font-weight: 600;
       text-transform: uppercase;
@@ -186,15 +335,41 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="javascript:void(0);" id="Home-link">Home</a></li>
-        <li><a href="javascript:void(0);" id="about-link">About</a></li>
-        <li><a href="javascript:void(0);" id="services-link"> Projects</a></li>
-        <li><a href="javascript:void(0);" id="contact-link">Contact</a></li>
-    
-      </ul>
-    </nav>
+    <nav>
+        <div>
+          <div class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+              />
+            </svg>
+          </div>
+          <form class="search">
+            <input type="text" placeholder="Search" class="search_input"/>
+            <button type="button" class="search_button">
+              <i class="ri-search-2-line"></i>
+            </button>
+          </form>
+          <div>ARCHVISION</div>
+        </div>
+        <div>
+            <div><a href="home.html" style="color: inherit; text-decoration: none;">Home</a></div>
+            <div><a href="about.html" style="color: inherit; text-decoration: none;">About</a></div>
+          <div class="active"><a href="projects.html" style="color: inherit; text-decoration: none;">Projects</a></div>
+          <div><a href="contact us.html" style="color: inherit; text-decoration: none;">Contact Us</a></div>
+          <div class="toggle">
+            <button id="mode-toggle" class="mode-toggle">Switch to Dark Mode</button>
+          </div>
+        </div>
+      </nav>
   </header>
 
   <h1>ArchVision</h1>
@@ -292,6 +467,54 @@
       document.getElementById('projects').style.display = 'none'; // Hide projects
       document.getElementById('projects-subheading').style.display = 'none'; // Hide subheading
     });
+               // Check local storage for saved mode
+               const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'dark') {
+                body.classList.add('dark-mode');
+                modeToggle.textContent = 'Switch to Light Mode';
+            }
+
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+
+                // Update button text based on the current mode
+                if (body.classList.contains('dark-mode')) {
+                    modeToggle.textContent = 'Switch to Light Mode';
+                    localStorage.setItem('mode', 'dark'); // Save mode to local storage
+                } else {
+                    modeToggle.textContent = 'Switch to Dark Mode';
+                    localStorage.setItem('mode', 'light'); // Save mode to local storage
+                }
+            });
+        });
+        // Dark Mode Toggle Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            // Check local storage for saved mode
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'light') {
+                body.classList.add('light-mode');
+                modeToggle.textContent = 'Switch to Dark Mode';
+            } else {
+                body.classList.remove('light-mode');
+                modeToggle.textContent = 'Switch to Light Mode';
+            }
+
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                // Update button text based on the current mode
+                if (body.classList.contains('light-mode')) {
+                    modeToggle.textContent = 'Switch to Dark Mode';
+                    localStorage.setItem('mode', 'light');
+                } else {
+                    modeToggle.textContent = 'Switch to Light Mode';
+                    localStorage.setItem('mode', 'dark');
+                }
+            });
+        });
+
   </script>
 
 </body>
