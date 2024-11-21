@@ -14,12 +14,12 @@
     body {
       font-family: 'League Spartan', sans-serif;
       line-height: 1.6;
-      background-color: #f4f9fc; /* Light blue background */
+      background-color: burlywood; /* Light blue background */
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: #003366; /* Dark blue for navbar */
+      background-color: rgb(128, 42, 42); /* Dark blue for navbar */
       padding: 1rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -49,12 +49,12 @@
     }
 
     .nav-list a:hover {
-      background-color: #5bc0de; /* Light blue for hover */
+      background-color:  bisque; /* Light blue for hover */
       transform: scale(1.1);
     }
 
     h1 {
-      color: #003366; /* Dark blue for header */
+      color:  rgb(128, 42, 42); /* Dark blue for header */
       font-size: 100px;
       font-family: Broadway, sans-serif;
       text-align: center;
@@ -62,7 +62,7 @@
     }
 
     h5 {
-      color: #003366; /* Dark blue for subtitle */
+      color:  rgb(128, 42, 42); /* Dark blue for subtitle */
       font-size: 20px;
       font-family: Broadway, sans-serif;
       text-align: center;
@@ -84,7 +84,7 @@
 
     #services {
       padding: 60px 20px;
-      background-color: #e0f7fa; /* Light blue background */
+      background-color:   blanchedalmond; /* Light blue background */
     }
 
     #services h2 {
@@ -115,7 +115,7 @@
 
     /* Ensure the project cards take up the full width of the grid cell */
     .project-card {
-      background-color: #ffffff;
+      background-color:   burlywood;
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
       overflow: hidden;
@@ -143,7 +143,7 @@
     .project-card h3 {
       font-size: 1.6rem;
       font-family: 'League Spartan', sans-serif;
-      color: #003366;
+      color:  brown;
       margin-bottom: 10px;
       text-align: center;
     }
@@ -177,7 +177,7 @@
     #projects-heading {
   display: none; /* Hide "Our Projects" heading by default */
   text-align: center;
-  color: #003366; /* Dark blue color */
+  color:  brown; /* Dark blue color */
   font-size: 36px;
   font-family: Broadway, sans-serif;
   margin-top: 50px;
@@ -188,10 +188,11 @@
   <header>
     <nav class="navbar">
       <ul class="nav-list">
-        <li><a href="javascript:void(0);" id="home-link">Home</a></li>
+        <li><a href="javascript:void(0);" id="Home-link">Home</a></li>
         <li><a href="javascript:void(0);" id="about-link">About</a></li>
-        <li><a href="javascript:void(0);" id="services-link">Services</a></li>
+        <li><a href="javascript:void(0);" id="services-link"> Projects</a></li>
         <li><a href="javascript:void(0);" id="contact-link">Contact</a></li>
+    
       </ul>
     </nav>
   </header>
@@ -203,7 +204,7 @@
     <h2 id="projects-heading" style="text-align: center; color: #003366; font-size: 36px; font-family: Broadway, sans-serif; margin-top: 50px;">
         Our Projects
       </h2>
-    <h4 id="projects-subheading" style="text-align: center; color: #003366; font-size: 36px; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
+    <h4 id="projects-subheading" style="text-align: center; color:  rgb(128, 42, 42); font-size: 36px; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin: 20px 0; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
         Have a look at our recent projects:
       </h4>
 
@@ -265,24 +266,21 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2024 Theo James. All rights reserved.</p>
-  </footer>
+ 
   <script>
     // Initially hide the projects and subheading section
     document.getElementById('projects').style.display = 'none';
     document.getElementById('projects-subheading').style.display = 'none';
 
+    document.getElementById('Home-link').addEventListener('click', function() {
+      document.getElementById('projects').style.display = 'none'; // Hide projects
+      document.getElementById('projects-subheading').style.display = 'none'; // Hide subheading
+    });
+
     // Show projects and subheading when the "Services" tab is clicked
     document.getElementById('services-link').addEventListener('click', function() {
       document.getElementById('projects').style.display = 'grid'; // Show projects
       document.getElementById('projects-subheading').style.display = 'block'; // Show subheading
-    });
-
-    // Hide projects and subheading when any other tab is clicked
-    document.getElementById('home-link').addEventListener('click', function() {
-      document.getElementById('projects').style.display = 'none'; // Hide projects
-      document.getElementById('projects-subheading').style.display = 'none'; // Hide subheading
     });
 
     document.getElementById('about-link').addEventListener('click', function() {
