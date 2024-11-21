@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArchVision - Contact Us</title>
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+
+    /* Body and Layout Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000; /* Default to black background (dark mode) */
+      color: #FFFFFFDD; /* White text for dark mode */
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: "Inter", sans-serif;
+    }
+    .progress-sub-background {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: #fff5;
+  }
+
+  .progress-sub-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 9999px;
+    width: 0%;
+  }
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 36px;
+    font-weight: 500;
+}
+
+.dark-mode nav {
+    background-color: #000000; /* Dark background for dark mode */
+    color: #ffffff; /* White text for dark mode */
+}
+
+.light-mode nav {
+    background-color: #ffffff; /* Light background for light mode */
+    color: #000000; /* Black text for light mode */
+}
+
+/* Other existing styles... */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ccc;
+}
+
+.dark-mode .navbar {
+    background-color: #444444;
+    border-color: #555555;
+    
+}
+
+.mode-toggle {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #080809;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+    background-color: #0056b3;
+}
+
+nav svg {
+    width: 20px;
+    height: 20px;
+}
+
+nav .svg-container {
+    width: 20px;
+    height: 20px;
+}
+
+nav > div {
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+nav > div:first-child {
+    gap: 10px;
+}
+
+nav > div:last-child {
+    gap: 24px;
+}
+
+nav > div:last-child > .active {
+    position: relative;
+}
+
+nav > div:last-child > .active:after {
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    height: 3px;
+    border-radius: 99px;
+    background-color: #ecad29;
+}
+
+.indicator {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 5px;
+    z-index: 60;
+    background-color: #ecad29;
+}
+
+.search_input {
+    display: none;
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 5px;
+    color: white;
+    font-size: 14px;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.search_input.active {
+    display: block;
+    width: 200px;
+}
+
+.search_button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search_button:hover {
+    color: #ecad29;
+}
+
+.search {
+    position: relative;
+}
+
+.search .search_input {
+    margin-left: 10px;
+}
+    /* Contact Us Header */
+    .contact-header {
+      background-color: #000;
+      padding: 40px 0;
+      color: #fff;
+      text-align: center;
+    }
+    .dark-mode .contact-header {
+    background-color: #000000; /* Dark background for dark mode */
+    color: #ffffff; /* White text for dark mode */
+}
+
+.light-mode .contact-header {
+    background-color: #ffffff; /* Light background for light mode */
+    color: #000000; /* Black text for light mode */
+}
+
+    /* Content Section Styles */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 300px; /* Two columns: one for form and one for swiper */
+      grid-gap: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex-grow: 1;
+    }
+
+    .contact-form, .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group input, .form-group textarea {
+      padding: 10px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-button {
+      background-color: #3f3f3f;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    .submit-button:hover {
+      background-color: #333;
+    }
+    
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      background-color: #222;
+    }
+
+    /* Light mode styles */
+    .light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .light-mode footer {
+      background-color: #f1f1f1;
+      color: black;
+    }
+    .newsletter-form{
+        padding: 10px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    /* Card Swiper Styles */
+    .swiper-container {
+        position:relative;
+        width: 100%; /* Full width of the column */
+        height: 200px; /* Fixed height for rectangle shape */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .swiper-slide {
+        min-width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: right;
+        color: white;
+        text-align: center;
+        font-size: 18px; /* Adjusted font size for better fit */
+    }
+
+    .swiper-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+    
+</style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="indicator"></div>
+
+    <nav>
+        <div>
+            <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+                </svg>
+            </div>
+            <form class="search">
+                <input type="text" placeholder="Search" class="search_input"/>
+                <button type="button" class="search_button">
+                    <i class="ri-search-2-line"></i>
+                </button>
+            </form>
+            <div>ARCHVISION</div>
+        </div>
+        <div>
+            <div><a href="home.html" style="color: inherit; text-decoration: none;">Home</a></div>
+            <div><a href="about.html" style="color: inherit; text-decoration: none;">About</a></div>
+            <div><a href="projects.html" style="color: inherit; text-decoration: none;">Projects</a></div>
+            <div class="active"><a href="contact us.html" style="color: inherit; text-decoration: none;">Contact Us</a></div>
+    
+            <div class="toggle">
+                <button id="mode-toggle" class="mode-toggle">Switch to Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Us Header -->
+    <header class="contact-header">
+        <h1>Contact Us</h1>
+    </header>
+
+    <!-- Contact Form Section -->
+    <div class="container">
+        <div class="form-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter">
+            <div class="newsletter-container">
+                <h3>Our Newsletters</h3>
+                <p>Have the first look to our latest offers!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button type="submit" class="newsletter-button">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    
+        <!-- Card Swiper Section -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('https://i.pinimg.com/736x/6a/ab/23/6aab2360421e854402ce073b78d78ecc.jpg');">
+                    <h3>"A rare talent that effortlessly brings luxury and practicality together."</h3>
+                    <p>Sienna Paulsen</p>                
+                  </div>
+                <div class="swiper-slide" style="background-image: url('https://i.pinimg.com/736x/1b/27/e0/1b27e0f65b4288d78049054908f31f24.jpg');">
+                    <h3>"A true master of design – every project exceeds expectations."</h3>
+                    <p>Irah Sylvester</p>
+                </div>
+                <div class="swiper-slide" style="background-image: url('https://i.pinimg.com/736x/ac/55/b1/ac55b1c973f1401a0a2e103c5bb84113.jpg');">
+                  <h3>"Impressive vision and flawless execution – a true architectural genius."</h3>
+                  <p>Allen Lorence</p>                
+                </div>
+            </div>
+            <button class="swiper-button prev">Prev</button>
+            <button class="swiper-button next">Next</button>
+        </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="contact-info-container">
+        <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <p>(+976) 765 685</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>archvision@gmail.com</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Manhattan, New York</p>
+        </div>
+    </div>
+
+ 
+<!-- Google Map Embed -->
+<div id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093127!2d144.9537352158568!3d-37.816279742011714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774f3e6a3a0e0!2sEureka%20Skydeck!5e0!3m2!1sen!2sau!4v1677554454563!5m2!1sen!2sau" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2023 Influenca. All rights reserved.</p>
+</footer>
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            // Check local storage for saved mode
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'dark') {
+                body.classList.add('dark-mode');
+                modeToggle.textContent = 'Switch to Light Mode';
+            }
+
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+
+                // Update button text based on the current mode
+                if (body.classList.contains('dark-mode')) {
+                    modeToggle.textContent = 'Switch to Light Mode';
+                    localStorage.setItem('mode', 'dark'); // Save mode to local storage
+                } else {
+                    modeToggle.textContent = 'Switch to Dark Mode';
+                    localStorage.setItem('mode', 'light'); // Save mode to local storage
+                }
+            });
+        });
+        // Dark Mode Toggle Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            // Check local storage for saved mode
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'light') {
+                body.classList.add('light-mode');
+                modeToggle.textContent = 'Switch to Dark Mode';
+            } else {
+                body.classList.remove('light-mode');
+                modeToggle.textContent = 'Switch to Light Mode';
+            }
+
+            modeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                // Update button text based on the current mode
+                if (body.classList.contains('light-mode')) {
+                    modeToggle.textContent = 'Switch to Dark Mode';
+                    localStorage.setItem('mode', 'light');
+                } else {
+                    modeToggle.textContent = 'Switch to Light Mode';
+                    localStorage.setItem('mode', 'dark');
+                }
+            });
+        });
+
+        // Card Swiper Functionality
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        const slides = document.querySelectorAll('.swiper-slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        let currentIndex = 0;
+
+        function updateSwiper() {
+            const offset = -currentIndex * 100; // Calculate the offset
+            swiperWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            updateSwiper();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            updateSwiper();
+        });
+    </script>
+
+</body>
+</html>
